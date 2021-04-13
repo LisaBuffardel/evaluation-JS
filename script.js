@@ -28,7 +28,41 @@ $(document).ready(() => {
         console.log('d6')
         $('#d01, #d03, #d04, #d06, #d07, #d09').css('background-color', 'red')
     }
-    d6()
+
+    $('#lancerD').click(function() {
+        var minNumber = 1; // le minimum
+        var maxNumber = 5; // le maximum
+        var randomnumber = Math.floor(Math.random() * (maxNumber + 1) + minNumber); // la fonction magique
+        console.log(randomnumber)
+
+        $('.pointD').css('background-color', 'white')
+
+        if (randomnumber === 1) {
+            d1()
+        }
+        if (randomnumber === 2) {
+            d2()
+        }
+        if (randomnumber === 3) {
+            d3()
+        }
+        if (randomnumber === 4) {
+            d4()
+        }
+        if (randomnumber === 5) {
+            d5()
+        }
+        if (randomnumber === 6) {
+            d6()
+        }
+
+        var scoreCurrent = $('.scoreCurrent1').text()
+        var score = parseInt(scoreCurrent, 10)
+        $('.scoreCurrent1').text(score + randomnumber)
+
+
+
+    })
 
 
 
