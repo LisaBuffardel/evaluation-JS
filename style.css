@@ -55,13 +55,14 @@ body {
 /**creation du dé**/
 
 .carre {
-    background-color: grey;
+    background-color: white;
+    box-shadow: 0px 0px 10px grey;
     width: 110px;
     height: 110px;
 }
 
 .pointD {
-    background-color: red;
+    background-color: white;
     border-radius: 50%;
     height: 20px;
     width: 20px;
@@ -74,6 +75,12 @@ body {
     position: absolute;
     left: 46%;
     top: 35%;
+}
+
+.middle3 {
+    position: absolute;
+    left: 46%;
+    top: 75%;
 }
 
 .rectangle {
