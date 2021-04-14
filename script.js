@@ -59,10 +59,22 @@ $(document).ready(() => {
         var scoreCurrent = $('.scoreCurrent1').text()
         var score = parseInt(scoreCurrent, 10)
         $('.scoreCurrent1').text(score + randomnumber)
-
-
-
     })
+
+    $('#newGame').click(function() {
+        $('.scoreCurrent1').text(0)
+        $('.globalScore1').text(0)
+    })
+
+    $('#hold').click(function() {
+        var globalScore1 = $('.globalScore1').text()
+        var globalScore = parseInt(globalScore1, 10)
+        var scoreCurrent1 = $('.scoreCurrent1').text()
+        var scoreCurrent = parseInt(scoreCurrent1, 10)
+        $('.globalScore1').text(scoreCurrent + globalScore)
+        $('.scoreCurrent1').text(0)
+    })
+
 
 
 
