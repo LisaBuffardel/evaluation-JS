@@ -32,7 +32,6 @@ $(document).ready(() => {
     //**fin fonctions générateur de dé */
 
     //**fonction du joueur en cours */
-    console.log('initialisation')
     var players = false; //**false = player1 true = player2 */
     statut()
         //**fin fonction joueur en cours */
@@ -43,14 +42,11 @@ $(document).ready(() => {
             var maxNumber = 5; // le maximum
             var randomnumber = Math.floor(Math.random() * (maxNumber + 1) + minNumber); // la fonction magique
             console.log(randomnumber)
-            console.log(players)
 
             if (players == false) {
-                console.log('player1')
                 var scoreCurrent = $('.scoreCurrent1').text()
             }
             if (players == true) {
-                console.log('player2')
                 var scoreCurrent = $('.scoreCurrent2').text()
             }
             var score = parseInt(scoreCurrent, 10) + randomnumber
@@ -166,32 +162,5 @@ $(document).ready(() => {
             $('.player1 .point').css('display', 'none')
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 })
