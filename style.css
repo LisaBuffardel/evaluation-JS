@@ -3,18 +3,6 @@
     src: url("Font/Lato-Light.ttf") format("truetype");
 }
 
-.test {
-    height: 700px;
-}
-
-.middle {
-    position: absolute;
-    left: 45%;
-    top: 5%;
-    width: 200px;
-    height: 200px;
-}
-
 .bloc1 {
     background-color: #F7F7F7;
     color: black;
@@ -27,9 +15,10 @@
 
 .bloc1,
 .bloc2 {
-    padding-top: 10%;
+    padding-top: 10vh;
     text-align: center;
-    font-size: 40px;
+    font-size: 12vh;
+    height: 100vh;
 }
 
 .point {
@@ -40,6 +29,7 @@
     display: inline-block;
     margin-left: 15px;
     margin-bottom: 7px;
+    display: none;
 }
 
 body {
@@ -49,7 +39,7 @@ body {
 .globalScore1,
 .globalScore2 {
     color: #EA4C4D;
-    font-size: 80px;
+    font-size: 12vh;
 }
 
 
@@ -58,47 +48,68 @@ body {
 .carre {
     background-color: white;
     box-shadow: 0px 0px 10px grey;
-    width: 110px;
-    height: 110px;
+    width: 20vh;
+    height: 20vh;
 }
 
 .pointD {
     background-color: white;
     border-radius: 50%;
-    height: 20px;
-    width: 20px;
+    height: 4vh;
+    width: 4vh;
     float: left;
-    margin: 4px;
-    margin-top: 10px;
-}
-
-.middle2 {
-    position: absolute;
-    left: 46%;
-    top: 35%;
-}
-
-.middle3 {
-    position: absolute;
-    left: 46%;
-    top: 75%;
+    margin: 1.21vh;
 }
 
 .rectangle {
     background-color: #EA4C4D;
-    width: 20%;
-    height: 16%;
     display: inline-block;
-    margin-top: 15%;
+    margin-top: 2vh;
+    width: 35%;
 }
 
 .current {
     color: black;
-    font-size: 20px;
+    font-size: 4vh;
     padding-top: 5px;
 }
 
-.scoreCurrent {
+.scoreCurrent1,
+.scoreCurrent2 {
     color: white;
-    font-size: 22px;
+    font-size: 6vh;
+}
+
+#newGame {
+    position: absolute;
+    z-index: 10;
+    left: 45%;
+    top: 5%;
+}
+
+#dé {
+    position: absolute;
+    z-index: 9;
+    left: 45%;
+    top: 30vh;
+}
+
+#lancerD {
+    position: absolute;
+    z-index: 8;
+    left: 45%;
+    top: 70vh;
+}
+
+#hold {
+    position: absolute;
+    z-index: 7;
+    left: 45%;
+    top: 78vh;
+}
+
+#newGame,
+#lancerD,
+#hold {
+    font-size: 3vh;
 }

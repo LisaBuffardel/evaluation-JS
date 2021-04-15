@@ -34,8 +34,8 @@ $(document).ready(() => {
     //**fonction du joueur en cours */
     console.log('initialisation')
     var players = false; //**false = player1 true = player2 */
-
-    //**fin fonction joueur en cours */
+    statut()
+        //**fin fonction joueur en cours */
 
     //**fonction de générations aléatoire du dé */
     $('#lancerD').click(function() {
@@ -84,12 +84,14 @@ $(document).ready(() => {
                 if (score == 0) {
                     console.log('changement joueur')
                     players = true
+                    statut()
                 }
             } else if (players == true) {
                 $('.scoreCurrent2').text(score)
                 if (score == 0) {
                     console.log('changement joueur')
                     players = false
+                    statut()
                 }
             }
 
@@ -104,6 +106,7 @@ $(document).ready(() => {
             $('.scoreCurrent2').text(0)
             $('.globalScore2').text(0)
             players = false
+            statut()
         })
         //**fin fonction redémarrer une partie */
 
@@ -118,6 +121,7 @@ $(document).ready(() => {
                 $('.scoreCurrent1').text(0)
                 winners(scoreCurrent + globalScore)
                 players = true
+                statut()
             } else if (players == true) {
                 var globalScore2 = $('.globalScore2').text()
                 var globalScore = parseInt(globalScore2, 10)
@@ -127,6 +131,7 @@ $(document).ready(() => {
                 $('.scoreCurrent2').text(0)
                 winners(scoreCurrent + globalScore)
                 players = false
+                statut()
             }
 
 
@@ -150,7 +155,17 @@ $(document).ready(() => {
     //**Fin fonction winners */
 
 
-
+    //**Gestion du point à côté des players */
+    function statut() {
+        if (players == false) {
+            $('.player1 .point').css('display', 'inline-block')
+            $('.player2 .point').css('display', 'none')
+        }
+        if (players == true) {
+            $('.player2 .point').css('display', 'inline-block')
+            $('.player1 .point').css('display', 'none')
+        }
+    }
 
 
 
