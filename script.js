@@ -1,5 +1,50 @@
+// window.onorientationchange = function() {
+//     var portraitOrientation = window.matchMedia("(orientation:paysage)");
+//     if (portraitOrientation.matches) {
+//         document.getElementById("portrait").style.display = "none";
+//         document.getElementById("paysage").style.display = "block";
+//     } else {
+//         document.getElementById("paysage").style.display = "none";
+//         document.getElementById("portrait").style.display = "block";
+//     }
+// }
+
+// window.addEventListener("orientationchange", function() {
+//     console.log("The orientation of the screen is: " + window.orientation);
+
+//     if (window.orientation === 0) {
+//         document.getElementById("portrait").style.display = "block";
+//         document.getElementById("paysage").style.display = "none";
+//     }
+//     if (window.orientation === 90) {
+//         document.getElementById("paysage").style.display = "block";
+//         document.getElementById("portrait").style.display = "none";
+//     }
+// });
+
 $(document).ready(() => {
-    //**fonctions pour générer un dé en css */
+    if (window.orientation === 0) {
+        $("#portrait").css('display', 'flex');
+        $("#paysage").css('display', 'none');
+    }
+    if (window.orientation === 90) {
+        $("#portrait").css('display', 'none');
+        $("#paysage").css('display', 'flex');
+    }
+
+    $(window).on("orientationchange", function(event) {
+        if (window.orientation === 0) {
+            $("#portrait").css('display', 'flex');
+            $("#paysage").css('display', 'none');
+        }
+        if (window.orientation === 90) {
+            $("#portrait").css('display', 'none');
+            $("#paysage").css('display', 'flex');
+        }
+
+    });
+
+    //**fonction pour générer un dé en css */
     function d1() {
         console.log('d1')
         $('#d05').css('background-color', 'red')
@@ -36,7 +81,7 @@ $(document).ready(() => {
     statut()
         //**fin fonction joueur en cours */
 
-    //**fonction de générations aléatoire du dé */
+    //**Fonction pour générer un dé aléatoire */
     $('#lancerD').click(function() {
             var minNumber = 1; // le minimum
             var maxNumber = 5; // le maximum
@@ -129,9 +174,6 @@ $(document).ready(() => {
                 players = false
                 statut()
             }
-
-
-
         })
         //**fin fonction hold */
 
