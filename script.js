@@ -1,11 +1,11 @@
 $(document).ready(() => {
+    $("#paysage").css('display', 'flex');
 
     //**fonction landscape */
     if (window.orientation === 0) {
         $("#portrait").css('display', 'flex');
         $("#paysage").css('display', 'none');
-    }
-    if (window.orientation === 90) {
+    } else {
         $("#portrait").css('display', 'none');
         $("#paysage").css('display', 'flex');
     }
